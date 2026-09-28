@@ -1,0 +1,31 @@
+name: flutter_widget_app
+description: A collection of reusable Flutter widgets with press animations, shimmer effects, and customizable buttons.
+version: 1.0.0
+
+homepage: https://github.com/YOUR_USERNAME/press_unpress
+repository: https://github.com/YOUR_USERNAME/press_unpress
+issue_tracker: https://github.com/YOUR_USERNAME/press_unpress/issues
+
+topics:
+  - flutter
+  - widgets
+  - animations
+  - shimmer
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.9
+  get: ^4.7.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
