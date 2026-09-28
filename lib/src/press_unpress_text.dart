@@ -1,22 +1,24 @@
 import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PressUnpressCommen extends StatefulWidget {
+class PressUnpressWidget extends StatefulWidget {
   final Widget widget;
-  void Function()? onTap;
+  final void Function()? onTap;
 
-  PressUnpressCommen({super.key, 
+  const PressUnpressWidget({
+    super.key,
     required this.widget,
     required this.onTap,
   });
 
   @override
-  _PressUnpressCommenState createState() => _PressUnpressCommenState();
+  State<PressUnpressWidget> createState() => _PressUnpressWidgetState();
 }
 
-class _PressUnpressCommenState extends State<PressUnpressCommen> {
+class _PressUnpressWidgetState extends State<PressUnpressWidget> {
   final _imageAssetController = StreamController<String>.broadcast();
   RxBool isPressed = false.obs;
 
@@ -47,15 +49,16 @@ class _PressUnpressCommenState extends State<PressUnpressCommen> {
         onTap: widget.onTap,
         onDoubleTap: () {},
         child: StreamBuilder<String>(
-            stream: _imageAssetController.stream,
-            builder: (context, snapshot) {
-              return Obx(
-                    () => Opacity(
-                  opacity: isPressed.value ? 0.5: 1.0,
-                  child: widget.widget
-                ),
-              );
-            }),
+          stream: _imageAssetController.stream,
+          builder: (context, snapshot) {
+            return Obx(
+              () => Opacity(
+                opacity: isPressed.value ? 0.5 : 1.0,
+                child: widget.widget,
+              ),
+            );
+          },
+        ),
       ),
     );
   }

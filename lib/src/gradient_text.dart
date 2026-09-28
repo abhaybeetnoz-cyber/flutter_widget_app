@@ -106,16 +106,27 @@ class GradientText extends StatelessWidget {
       shaderCallback: (Rect bounds) {
         switch (gradientType) {
           case GradientType.linear:
-            final (Alignment beginAlignment, Alignment endAlignment) = gradientDirection.alignment;
-            return LinearGradient(begin: beginAlignment, colors: colors, stops: stops, end: endAlignment).createShader(bounds);
+            final (Alignment beginAlignment, Alignment endAlignment) =
+                gradientDirection.alignment;
+            return LinearGradient(
+              begin: beginAlignment,
+              colors: colors,
+              stops: stops,
+              end: endAlignment,
+            ).createShader(bounds);
           case GradientType.radial:
-            return RadialGradient(colors: colors, radius: radius).createShader(bounds);
+            return RadialGradient(
+              colors: colors,
+              radius: radius,
+            ).createShader(bounds);
         }
       },
       child: Text(
         text,
         overflow: overflow,
-        style: style != null ? style?.copyWith(color: Colors.white) : const TextStyle(color: Colors.white),
+        style: style != null
+            ? style?.copyWith(color: Colors.white)
+            : const TextStyle(color: Colors.white),
         textAlign: textAlign,
         maxLines: maxLines,
         softWrap: softWrap,

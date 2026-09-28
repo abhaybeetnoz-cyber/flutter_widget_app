@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -6,14 +7,15 @@ import 'package:get/get.dart';
 
 class PressUnpressResult extends StatefulWidget {
   final String image;
-  void Function()? onTap;
-  void Function()? onLongPressCancel;
-  void Function(LongPressDownDetails)? onLongPressDown;
-  void Function(LongPressEndDetails)? onLongPressEnd;
+  final void Function()? onTap;
+  final void Function()? onLongPressCancel;
+  final void Function(LongPressDownDetails)? onLongPressDown;
+  final void Function(LongPressEndDetails)? onLongPressEnd;
   final double? height;
   final double? width;
 
-  PressUnpressResult({super.key, 
+  const PressUnpressResult({
+    super.key,
     required this.image,
     required this.onTap,
     required this.onLongPressEnd,
@@ -24,7 +26,7 @@ class PressUnpressResult extends StatefulWidget {
   });
 
   @override
-  _ImageContainerState createState() => _ImageContainerState();
+  State<PressUnpressResult> createState() => _ImageContainerState();
 }
 
 class _ImageContainerState extends State<PressUnpressResult> {
@@ -70,21 +72,22 @@ class _ImageContainerState extends State<PressUnpressResult> {
         onLongPressDown: widget.onLongPressDown,
         onLongPressEnd: widget.onLongPressEnd,
         child: StreamBuilder<String>(
-            stream: _imageAssetController.stream,
-            initialData: _currentImageAsset,
-            builder: (context, snapshot) {
-              return Obx(
-                () => Opacity(
-                  opacity: isPressed.value ? 0.5 : 1.0,
-                  child: Image.asset(
-                    snapshot.data!,
-                    width: widget.width,
-                    height: widget.height,
-                    fit: BoxFit.contain,
-                  ),
+          stream: _imageAssetController.stream,
+          initialData: _currentImageAsset,
+          builder: (context, snapshot) {
+            return Obx(
+              () => Opacity(
+                opacity: isPressed.value ? 0.5 : 1.0,
+                child: Image.asset(
+                  snapshot.data!,
+                  width: widget.width,
+                  height: widget.height,
+                  fit: BoxFit.contain,
                 ),
-              );
-            }),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

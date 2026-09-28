@@ -8,26 +8,23 @@ class GradientSliderTrackShape extends RoundedRectSliderTrackShape {
   GradientSliderTrackShape({
     this.trackPadding = 12.0,
     this.borderRadius = 8.0,
-    this.gradientColor = const [
-      Color(0xffffffff),
-      Color(0xff000000),
-    ],
+    this.gradientColor = const [Color(0xffffffff), Color(0xff000000)],
   });
 
   @override
   void paint(
-      PaintingContext context,
-      Offset offset, {
-        required RenderBox parentBox,
-        required SliderThemeData sliderTheme,
-        required Animation<double> enableAnimation,
-        required TextDirection textDirection,
-        required Offset thumbCenter,
-        Offset? secondaryOffset,
-        bool isEnabled = false,
-        bool isDiscrete = false,
-        double additionalActiveTrackHeight = 2.0,
-      }) {
+    PaintingContext context,
+    Offset offset, {
+    required RenderBox parentBox,
+    required SliderThemeData sliderTheme,
+    required Animation<double> enableAnimation,
+    required TextDirection textDirection,
+    required Offset thumbCenter,
+    Offset? secondaryOffset,
+    bool isEnabled = false,
+    bool isDiscrete = false,
+    double additionalActiveTrackHeight = 2.0,
+  }) {
     final Canvas canvas = context.canvas;
 
     final double trackHeight = sliderTheme.trackHeight ?? 4.0;

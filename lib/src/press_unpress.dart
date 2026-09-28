@@ -1,15 +1,17 @@
 import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PressUnpress extends StatefulWidget {
   final String image;
-  void Function()? onTap;
+  final VoidCallback? onTap;
   final double? height;
   final double? width;
 
-  PressUnpress({super.key, 
+  const PressUnpress({
+    super.key,
     required this.image,
     required this.onTap,
     this.height,
@@ -17,7 +19,7 @@ class PressUnpress extends StatefulWidget {
   });
 
   @override
-  _ImageContainerState createState() => _ImageContainerState();
+  State<PressUnpress> createState() => _ImageContainerState();
 }
 
 class _ImageContainerState extends State<PressUnpress> {
@@ -60,21 +62,22 @@ class _ImageContainerState extends State<PressUnpress> {
         onTap: widget.onTap,
         onDoubleTap: () {},
         child: StreamBuilder<String>(
-            stream: _imageAssetController.stream,
-            initialData: _currentImageAsset,
-            builder: (context, snapshot) {
-              return Obx(
-                () => Opacity(
-                  opacity: isPressed.value ? 0.5 : 1.0,
-                  child: Image.asset(
-                    snapshot.data!,
-                    width: widget.width,
-                    height: widget.height,
-                    fit: BoxFit.contain,
-                  ),
+          stream: _imageAssetController.stream,
+          initialData: _currentImageAsset,
+          builder: (context, snapshot) {
+            return Obx(
+              () => Opacity(
+                opacity: isPressed.value ? 0.5 : 1.0,
+                child: Image.asset(
+                  snapshot.data!,
+                  width: widget.width,
+                  height: widget.height,
+                  fit: BoxFit.contain,
                 ),
-              );
-            }),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

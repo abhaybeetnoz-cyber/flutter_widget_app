@@ -68,7 +68,7 @@ This package includes the following reusable widgets:
 * `PressUnpressResult`
 * `PressUnpressCommen`
 * `Shimmer`
-* `TintedClicker`
+* `TintedClicker`dart pub publish --dry-run-
 
 Refer to the example application for usage demonstrations.
 
