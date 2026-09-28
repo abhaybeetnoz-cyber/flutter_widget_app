@@ -6,3 +6,4 @@ export 'src/tinted_button.dart';
 export 'src/custom_slider.dart';
 export 'src/custom_thumb.dart';
 export 'src/gradient_text.dart';
+export 'src/custom_switch.dart';
