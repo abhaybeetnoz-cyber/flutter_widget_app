@@ -11,6 +11,7 @@ class ExampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScaleUtil.init(context, designSize: Size(560, 1268));
     return MaterialApp(
       title: 'Flutter Widget App Demo',
       debugShowCheckedModeBanner: false,
@@ -73,15 +74,6 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
                       color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 6),
-                  Text(
-                    'Created by Abhay Patel\nContributed by Sujal Rabadiya',
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                      fontStyle: FontStyle.italic,
                     ),
                   ),
                 ],
@@ -271,6 +263,26 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
                 ),
               )
             ),
+
+
+            // 6. PressUnPressWidget
+            PressUnpressWidget(
+              onTap: () {
+
+              },
+              widget: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.black
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                child: const Text(
+                  'PressUnpressWidget',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
           ],
         ),
       ),
