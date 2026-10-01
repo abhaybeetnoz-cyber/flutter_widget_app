@@ -104,7 +104,7 @@ class _SlidingSegmentBarState extends State<SlidingSegmentBar>
                 // Animated fill
                 AnimatedBuilder(
                   animation: _c,
-                  builder: (_, __) => switch (widget.style) {
+                  builder: (ctx, _) => switch (widget.style) {
                     SegmentBarStyle.sliding => _buildSliding(w),
                     SegmentBarStyle.growing => _buildGrowing(w),
                   },

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_app/flutter_widget_app.dart';
-import 'package:get/get.dart';
 
 void main() {
   runApp(const ExampleApp());
