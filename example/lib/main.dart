@@ -95,7 +95,10 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
               child: Center(
                 child: GradientText(
                   'Stunning Gradient Typography',
-                  style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w800,
+                  ),
                   colors: const [Colors.purple, Colors.orange, Colors.pink],
                   gradientDirection: GradientDirection.ltr,
                 ),
@@ -260,24 +263,25 @@ class _ExampleHomePageState extends State<ExampleHomePage> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-              )
+              ),
             ),
-
 
             // 6. PressUnPressWidget
             PressUnpressWidget(
-              onTap: () {
-
-              },
+              onTap: () {},
               widget: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.black
+                  color: Colors.black,
                 ),
                 padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                 child: const Text(
                   'PressUnpressWidget',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),

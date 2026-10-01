@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class ScaleUtil {
@@ -11,7 +12,11 @@ class ScaleUtil {
 
   static late double _fontSizeDiff;
 
-  static void init(BuildContext context, {Size? designSize, double? fontSizeDiff}) {
+  static void init(
+    BuildContext context, {
+    Size? designSize,
+    double? fontSizeDiff,
+  }) {
     designSize ??= const Size(1242, 2688);
     fontSizeDiff ??= 0;
 
@@ -31,7 +36,9 @@ class ScaleUtil {
     // final shortestSide = size.shortestSide;
     // final isTablet = shortestSide >= 600;
 
-    double diagonalLogical = sqrt((_screenHeight * _screenHeight) + (_screenWidth * _screenWidth));
+    double diagonalLogical = sqrt(
+      (_screenHeight * _screenHeight) + (_screenWidth * _screenWidth),
+    );
     double diagonalInches = diagonalLogical / 160;
     final isTablet = diagonalInches >= 5;
 
@@ -56,12 +63,10 @@ extension FigmaScaleExtension on num {
 
   /// Percentage of the design width converted to actual screen width.
   /// Example: 1150.dw with design width 1242 = 1150 / 1242 * screenWidth
-  double get dw =>
-      (this / ScaleUtil.designWidth) * ScaleUtil._screenWidth;
+  double get dw => (this / ScaleUtil.designWidth) * ScaleUtil._screenWidth;
 
   /// Percentage of the design height converted to actual screen height.
-  double get dh =>
-      (this / ScaleUtil.designHeight) * ScaleUtil._screenHeight;
+  double get dh => (this / ScaleUtil.designHeight) * ScaleUtil._screenHeight;
 
   /// Screen-width percentage.
   /// Example: 0.5.sw = 50% of screen width

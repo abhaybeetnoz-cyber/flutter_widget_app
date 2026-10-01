@@ -33,9 +33,7 @@ class PressUnPressBuilder extends StatelessWidget {
       child: GestureDetector(
         onTap: isActive ? onTap : null,
         onDoubleTap: () {},
-        child: Obx(
-              () => builder(isPressed.value),
-        ),
+        child: Obx(() => builder(isPressed.value)),
       ),
     );
   }

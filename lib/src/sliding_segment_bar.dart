@@ -78,7 +78,7 @@ class _SlidingSegmentBarState extends State<SlidingSegmentBar>
 
   double get _radius =>
       widget.radius ??
-          (widget.style == SegmentBarStyle.sliding ? widget.height / 2 : 0);
+      (widget.style == SegmentBarStyle.sliding ? widget.height / 2 : 0);
 
   BoxDecoration get _fillDecoration => BoxDecoration(
     color: widget.fillGradient == null ? widget.fillColor : null,
