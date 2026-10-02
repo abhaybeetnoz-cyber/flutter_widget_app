@@ -27,7 +27,7 @@ Add `flutter_widget_app` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_widget_app: ^1.0.4
+  flutter_widget_app: ^1.0.3
 ```
 
 Or via terminal:
