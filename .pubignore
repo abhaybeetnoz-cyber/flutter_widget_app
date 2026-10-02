@@ -1,0 +1,14 @@
+# IDEs & Editor directories
+.idea/
+.vscode/
+
+# Dart & Flutter build / tool caches
+.dart_tool/
+build/
+.pub/
+.pub-cache/
+
+# Local environment configuration
+android/local.properties
+*.iml
+.DS_Store

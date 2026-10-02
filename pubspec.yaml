@@ -1,6 +1,6 @@
 name: flutter_widget_app
 description: A collection of reusable Flutter widgets with press animations, shimmer effects, and customizable buttons.
-version: 1.0.0
+version: 1.0.3
 
 homepage: https://github.com/abhaybeetnoz-cyber/flutter_widget_app
 repository: https://github.com/abhaybeetnoz-cyber/flutter_widget_app
@@ -11,6 +11,7 @@ topics:
   - widgets
   - animations
   - shimmer
+  - scale
 
 environment:
   sdk: ^3.13.3
@@ -18,7 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.9
+  cupertino_icons: ^2.0.0
   get: ^4.7.3
 
 dev_dependencies:
